@@ -5,7 +5,7 @@ export default function About() {
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
           <div className="flex-shrink-0">
             <img 
-              src="/images/scott-finkelstein.jpeg" 
+              src="/images/scott-finkelstein.jpg" 
               alt="Scott Finkelstein"
               className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover shadow-lg"
             />
