@@ -83,12 +83,12 @@ export default function Contact() {
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">LinkedIn</h3>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/scottbfinkelstein/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 dark:text-blue-400 hover:underline"
                   >
-                    linkedin.com/in/yourprofile
+                    linkedin.com/in/scottbfinkelstein
                   </a>
                 </div>
               </div>
@@ -104,12 +104,12 @@ export default function Contact() {
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">GitHub</h3>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/scottfinkelstein"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 dark:text-blue-400 hover:underline"
                   >
-                    github.com/yourprofile
+                    github.com/scottfinkelstein
                   </a>
                 </div>
               </div>
