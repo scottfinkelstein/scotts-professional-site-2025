@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Work from "@/components/Work";
+import FeaturedWork from "@/components/FeaturedWork";
 import Contact from "@/components/Contact";
 import Navigation from "@/components/Navigation";
 
@@ -9,6 +10,7 @@ export default function Home() {
       <Navigation />
       <main className="container mx-auto px-4 py-8 max-w-6xl">
         <About />
+        <FeaturedWork />
         <Work />
         <Contact />
       </main>
