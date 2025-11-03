@@ -15,14 +15,16 @@ export default function ScrollFadeIn({ children, className = "", delay = 0 }: Sc
     const element = elementRef.current;
     if (!element) return;
 
+    let timeoutId: NodeJS.Timeout | null = null;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setTimeout(() => {
+            timeoutId = setTimeout(() => {
               element.classList.add("animate-fade-in");
+              observer.unobserve(element);
             }, delay);
-            observer.unobserve(element);
           }
         });
       },
@@ -35,6 +37,9 @@ export default function ScrollFadeIn({ children, className = "", delay = 0 }: Sc
     observer.observe(element);
 
     return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
       observer.disconnect();
     };
   }, [delay]);
