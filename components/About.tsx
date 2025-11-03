@@ -39,7 +39,7 @@ export default function About() {
                 Leadership
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Building and scaling high-performance engineering teams across global organizations
+                Building and scaling high-performance DevOps and enterprise application support teams
               </p>
             </div>
             
