@@ -34,29 +34,29 @@ export default function About() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mt-8">
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
-              <h3 className="font-semibold text-lg text-gray-900 dark:text-white mb-2">
+            <div className="bg-blue-50 dark:bg-blue-900/30 p-6 rounded-lg border border-blue-200 dark:border-blue-800">
+              <h3 className="font-semibold text-lg text-blue-900 dark:text-blue-100 mb-2">
                 Leadership
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <p className="text-blue-700 dark:text-blue-200 text-sm">
                 Building and scaling high-performance DevOps and enterprise application support teams
               </p>
             </div>
             
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
-              <h3 className="font-semibold text-lg text-gray-900 dark:text-white mb-2">
+            <div className="bg-green-50 dark:bg-green-900/30 p-6 rounded-lg border border-green-200 dark:border-green-800">
+              <h3 className="font-semibold text-lg text-green-900 dark:text-green-100 mb-2">
                 Strategy
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <p className="text-green-700 dark:text-green-200 text-sm">
                 Aligning technology initiatives with business objectives to drive measurable outcomes
               </p>
             </div>
             
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
-              <h3 className="font-semibold text-lg text-gray-900 dark:text-white mb-2">
+            <div className="bg-purple-50 dark:bg-purple-900/30 p-6 rounded-lg border border-purple-200 dark:border-purple-800">
+              <h3 className="font-semibold text-lg text-purple-900 dark:text-purple-100 mb-2">
                 Innovation
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <p className="text-purple-700 dark:text-purple-200 text-sm">
                 Leveraging emerging technologies to create competitive advantages and market opportunities
               </p>
             </div>
