@@ -5,7 +5,7 @@ import ScrollFadeIn from "./ScrollFadeIn";
 export default function About() {
   return (
     <ScrollFadeIn>
-      <section id="about" className="py-16 scroll-mt-16">
+      <section id="about" className="py-8 scroll-mt-16">
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
             <div className="flex-shrink-0">

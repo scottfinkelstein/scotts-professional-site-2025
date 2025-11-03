@@ -41,7 +41,7 @@ export default function Work() {
 
   return (
     <ScrollFadeIn delay={200}>
-      <section id="work" className="py-16 scroll-mt-16">
+      <section id="work" className="py-8 scroll-mt-16">
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8">
             Professional Experience
