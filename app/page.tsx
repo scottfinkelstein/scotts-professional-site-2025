@@ -7,8 +7,14 @@ import Navigation from "@/components/Navigation";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg"
+      >
+        Skip to main content
+      </a>
       <Navigation />
-      <main className="container mx-auto px-4 py-8 max-w-6xl">
+      <main id="main-content" className="container mx-auto px-4 py-8 max-w-6xl">
         <About />
         <FeaturedWork />
         <Work />

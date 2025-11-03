@@ -47,6 +47,8 @@ export default function Navigation() {
           <button
             className="md:hidden text-gray-700 dark:text-gray-300"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
           >
             <svg
               className="w-6 h-6"
@@ -56,6 +58,7 @@ export default function Navigation() {
               strokeWidth="2"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
               {isOpen ? (
                 <path d="M6 18L18 6M6 6l12 12" />
