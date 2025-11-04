@@ -57,29 +57,6 @@ export default function Contact() {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white">Email</h3>
-                    <a
-                      href="mailto:contact@example.com"
-                      className="text-blue-600 dark:text-blue-400 hover:underline"
-                    >
-                      contact@example.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <svg
-                    className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-3 mt-1"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
                     <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                   </svg>
                   <div>
