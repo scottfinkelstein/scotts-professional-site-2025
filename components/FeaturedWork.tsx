@@ -5,19 +5,19 @@ import ScrollFadeIn from "./ScrollFadeIn";
 export default function FeaturedWork() {
   const featuredWork = [
     {
-      title: "Enterprise Analytics Platform",
-      type: "Web Application",
-      description: "A comprehensive data analytics platform that processes 100M+ data points daily, providing real-time insights and predictive analytics for enterprise clients.",
-      technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
+      title: "Serenescape",
+      type: "iOS App",
+      description: "A meditation and mindefulness application designed to elevate your wellness journey",
+      technologies: ["Swift", "SwiftUI"],
       highlights: [
         "Real-time data processing with sub-second latency",
         "Custom visualization engine with 20+ chart types",
         "Advanced machine learning algorithms for predictive analytics",
         "Scalable microservices architecture supporting 10K+ concurrent users"
       ],
-      image: "https://picsum.photos/600/400?random=1",
+      image: "/images/serenescape-banner.png",
       link: "#",
-      category: "Enterprise Software"
+      category: "iOS App"
     },
     {
       title: "Mobile Banking App",
