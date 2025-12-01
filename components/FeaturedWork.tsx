@@ -76,9 +76,12 @@ export default function FeaturedWork() {
 
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
             {featuredWork.map((project, index) => (
-              <div
+              <a
                 key={index}
-                className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                href={project.link}
+                target={project.newWindow ? "_blank" : "_self"}
+                rel={project.newWindow ? "noopener noreferrer" : undefined}
+                className="block bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:-translate-y-2 transition-all duration-300 transform cursor-pointer group"
               >
                 <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-600 dark:to-gray-700">
                   <img
@@ -151,29 +154,9 @@ export default function FeaturedWork() {
                     </div>
                   </div>
 
-                  <a
-                    href={project.link}
-                    target={project.newWindow ? "_blank" : "_self"}
-                    rel={project.newWindow ? "noopener noreferrer" : undefined}
-                    className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium"
-                  >
-                    View Project
-                    <svg
-                      className="w-4 h-4 ml-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </a>
+
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 
