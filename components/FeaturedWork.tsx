@@ -7,17 +7,16 @@ export default function FeaturedWork() {
     {
       title: "Serenescape",
       type: "iOS App",
-      description: "A meditation and mindefulness application designed to elevate your wellness journey",
+      description: "A meditation and mindefulness application designed to elevate your wellness journey.",
       technologies: ["Swift", "SwiftUI"],
       highlights: [
-        "Real-time data processing with sub-second latency",
-        "Custom visualization engine with 20+ chart types",
-        "Advanced machine learning algorithms for predictive analytics",
-        "Scalable microservices architecture supporting 10K+ concurrent users"
+        "Choose between various color and sound themes",
+        "Home screen widgets to quickly launch into your favorite meditation experience",
       ],
       image: "/images/serenescape-banner.png",
-      link: "#",
-      category: "iOS App"
+      link: "https://scottfinkelstein.com/serenescape",
+      category: "iOS App",
+      newWindow: true
     },
     {
       title: "Mobile Banking App",
@@ -26,13 +25,12 @@ export default function FeaturedWork() {
       technologies: ["React Native", "TypeScript", "Node.js", "MongoDB", "Stripe API"],
       highlights: [
         "Biometric authentication and end-to-end encryption",
-        "Real-time transaction notifications and spending insights",
-        "Integrated budgeting tools with AI-powered recommendations",
-        "99.9% uptime with robust error handling and offline support"
+        "Real-time transaction notifications and spending insights"
       ],
       image: "https://picsum.photos/600/400?random=2",
       link: "#",
-      category: "Fintech"
+      category: "Fintech",
+      newWindow: false
     },
     {
       title: "E-commerce Marketplace",
@@ -47,7 +45,8 @@ export default function FeaturedWork() {
       ],
       image: "https://picsum.photos/600/400?random=3",
       link: "#",
-      category: "E-commerce"
+      category: "E-commerce",
+      newWindow: false
     },
     {
       title: "AI-Powered CRM System",
@@ -62,7 +61,8 @@ export default function FeaturedWork() {
       ],
       image: "https://picsum.photos/600/400?random=4",
       link: "#",
-      category: "Business Tools"
+      category: "Business Tools",
+      newWindow: false
     }
   ];
 
@@ -153,6 +153,8 @@ export default function FeaturedWork() {
 
                   <a
                     href={project.link}
+                    target={project.newWindow ? "_blank" : "_self"}
+                    rel={project.newWindow ? "noopener noreferrer" : undefined}
                     className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium"
                   >
                     View Project
