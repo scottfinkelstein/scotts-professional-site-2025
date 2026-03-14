@@ -101,7 +101,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <form onSubmit={handleSubmit} className="space-y-4" aria-describedby={status ? statusId : undefined}>
+              <form onSubmit={handleSubmit} className="space-y-4" aria-describedby={statusId}>
                 <div>
                   <label
                     htmlFor="name"
@@ -163,16 +163,14 @@ export default function Contact() {
                   Send Message
                 </button>
 
-                {status && (
-                  <div
-                    id={statusId}
-                    className="text-center text-green-600 dark:text-green-400 font-medium"
-                    role="status"
-                    aria-live="polite"
-                  >
-                    {status}
-                  </div>
-                )}
+                <div
+                  id={statusId}
+                  className={`text-center font-medium ${status ? "text-green-600 dark:text-green-400" : "invisible"}`}
+                  role="status"
+                  aria-live="polite"
+                >
+                  {status || " "}
+                </div>
               </form>
             </div>
           </div>

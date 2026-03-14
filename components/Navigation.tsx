@@ -15,17 +15,47 @@ export default function Navigation() {
     }
   };
 
-  // Handle Escape key to close menu
+  // Handle Escape key to close menu and Tab focus trapping
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Escape key closes menu
       if (e.key === "Escape" && isOpen) {
         setIsOpen(false);
         toggleButtonRef.current?.focus();
+        return;
+      }
+
+      // Tab focus trap within menu
+      if (e.key === "Tab" && isOpen && menuRef.current) {
+        const focusable = Array.from(
+          menuRef.current.querySelectorAll("button, a, [tabindex]")
+        ) as HTMLElement[];
+
+        if (focusable.length === 0) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     };
 
-    window.addEventListener("keydown", handleEscape);
-    return () => window.removeEventListener("keydown", handleEscape);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
+  // Focus first menu item when menu opens
+  useEffect(() => {
+    if (isOpen && menuRef.current) {
+      const firstButton = menuRef.current.querySelector("button") as HTMLElement;
+      firstButton?.focus();
+    }
   }, [isOpen]);
 
   return (

@@ -4,18 +4,18 @@ import { useState, useEffect } from "react";
 import ScrollFadeIn from "./ScrollFadeIn";
 
 const techStack = [
-  { label: "Swift", color: "bg-orange-900/40 text-orange-100 border-orange-700/50" },
-  { label: "SwiftUI", color: "bg-orange-900/40 text-orange-100 border-orange-700/50" },
-  { label: "React", color: "bg-cyan-900/40 text-cyan-100 border-cyan-700/50" },
-  { label: "Next.js", color: "bg-gray-700/40 text-gray-100 border-gray-600/50" },
-  { label: "TypeScript", color: "bg-blue-900/40 text-blue-100 border-blue-700/50" },
-  { label: "Node.js", color: "bg-green-900/40 text-green-100 border-green-700/50" },
-  { label: "Python", color: "bg-yellow-900/40 text-yellow-100 border-yellow-700/50" },
-  { label: "Tailwind CSS", color: "bg-teal-900/40 text-teal-100 border-teal-700/50" },
-  { label: "Claude API", color: "bg-purple-900/40 text-purple-100 border-purple-700/50" },
-  { label: "Xcode", color: "bg-blue-900/40 text-blue-100 border-blue-700/50" },
-  { label: "Git", color: "bg-red-900/40 text-red-100 border-red-700/50" },
-  { label: "Vercel", color: "bg-gray-700/40 text-gray-100 border-gray-600/50" },
+  { label: "Swift", color: "bg-orange-900/70 text-orange-50 border-orange-700/80" },
+  { label: "SwiftUI", color: "bg-orange-900/70 text-orange-50 border-orange-700/80" },
+  { label: "React", color: "bg-cyan-900/70 text-cyan-50 border-cyan-700/80" },
+  { label: "Next.js", color: "bg-gray-700/70 text-gray-50 border-gray-600/80" },
+  { label: "TypeScript", color: "bg-blue-900/70 text-blue-50 border-blue-700/80" },
+  { label: "Node.js", color: "bg-green-900/70 text-green-50 border-green-700/80" },
+  { label: "Python", color: "bg-yellow-900/70 text-yellow-50 border-yellow-700/80" },
+  { label: "Tailwind CSS", color: "bg-teal-900/70 text-teal-50 border-teal-700/80" },
+  { label: "Claude API", color: "bg-purple-900/70 text-purple-50 border-purple-700/80" },
+  { label: "Xcode", color: "bg-blue-900/70 text-blue-50 border-blue-700/80" },
+  { label: "Git", color: "bg-red-900/70 text-red-50 border-red-700/80" },
+  { label: "Vercel", color: "bg-gray-700/70 text-gray-50 border-gray-600/80" },
 ];
 
 export default function About() {

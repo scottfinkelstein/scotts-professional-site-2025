@@ -73,9 +73,9 @@ const projects = [
 ];
 
 const statusStyles: Record<string, string> = {
-  Live: "bg-green-900/30 text-green-100 border border-green-700/50",
-  "In Dev": "bg-yellow-900/30 text-yellow-100 border border-yellow-700/50",
-  Experiment: "bg-purple-900/30 text-purple-100 border border-purple-700/50",
+  Live: "bg-green-900/70 text-green-50 border border-green-700/80",
+  "In Dev": "bg-yellow-900/70 text-yellow-50 border border-yellow-700/80",
+  Experiment: "bg-purple-900/70 text-purple-50 border border-purple-700/80",
 };
 
 const statusDot: Record<string, string> = {
