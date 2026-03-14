@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useId } from "react";
 import ScrollFadeIn from "./ScrollFadeIn";
 
 export default function Contact() {
@@ -10,7 +10,7 @@ export default function Contact() {
     message: "",
   });
   const [status, setStatus] = useState("");
-  const statusId = useMemo(() => "form-status-" + Math.random().toString(36).substr(2, 9), []);
+  const statusId = useId();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
