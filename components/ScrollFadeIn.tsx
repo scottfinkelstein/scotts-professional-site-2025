@@ -10,6 +10,12 @@ interface ScrollFadeInProps {
 
 export default function ScrollFadeIn({ children, className = "", delay = 0 }: ScrollFadeInProps) {
   const elementRef = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useRef(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    prefersReducedMotion.current = mediaQuery.matches;
+  }, []);
 
   useEffect(() => {
     const element = elementRef.current;
@@ -21,10 +27,11 @@ export default function ScrollFadeIn({ children, className = "", delay = 0 }: Sc
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            const animationDelay = prefersReducedMotion.current ? 0 : delay;
             timeoutId = setTimeout(() => {
               element.classList.add("animate-fade-in");
               observer.unobserve(element);
-            }, delay);
+            }, animationDelay);
           }
         });
       },
@@ -44,14 +51,18 @@ export default function ScrollFadeIn({ children, className = "", delay = 0 }: Sc
     };
   }, [delay]);
 
+  const animationStyle = prefersReducedMotion.current
+    ? {}
+    : {
+        transform: "translateY(20px)",
+        transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
+      };
+
   return (
     <div
       ref={elementRef}
       className={`opacity-0 ${className}`}
-      style={{
-        transform: "translateY(20px)",
-        transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
-      }}
+      style={animationStyle}
     >
       {children}
     </div>

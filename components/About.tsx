@@ -4,24 +4,33 @@ import { useState, useEffect } from "react";
 import ScrollFadeIn from "./ScrollFadeIn";
 
 const techStack = [
-  { label: "Swift", color: "bg-orange-500/20 text-orange-300 border-orange-500/30" },
-  { label: "SwiftUI", color: "bg-orange-400/20 text-orange-200 border-orange-400/30" },
-  { label: "React", color: "bg-cyan-500/20 text-cyan-300 border-cyan-500/30" },
-  { label: "Next.js", color: "bg-gray-400/20 text-gray-200 border-gray-400/30" },
-  { label: "TypeScript", color: "bg-blue-500/20 text-blue-300 border-blue-500/30" },
-  { label: "Node.js", color: "bg-green-500/20 text-green-300 border-green-500/30" },
-  { label: "Python", color: "bg-yellow-500/20 text-yellow-300 border-yellow-500/30" },
-  { label: "Tailwind CSS", color: "bg-teal-500/20 text-teal-300 border-teal-500/30" },
-  { label: "Claude API", color: "bg-purple-500/20 text-purple-300 border-purple-500/30" },
-  { label: "Xcode", color: "bg-blue-400/20 text-blue-200 border-blue-400/30" },
-  { label: "Git", color: "bg-red-500/20 text-red-300 border-red-500/30" },
-  { label: "Vercel", color: "bg-gray-300/20 text-gray-100 border-gray-300/30" },
+  { label: "Swift", color: "bg-orange-900/40 text-orange-100 border-orange-700/50" },
+  { label: "SwiftUI", color: "bg-orange-900/40 text-orange-100 border-orange-700/50" },
+  { label: "React", color: "bg-cyan-900/40 text-cyan-100 border-cyan-700/50" },
+  { label: "Next.js", color: "bg-gray-700/40 text-gray-100 border-gray-600/50" },
+  { label: "TypeScript", color: "bg-blue-900/40 text-blue-100 border-blue-700/50" },
+  { label: "Node.js", color: "bg-green-900/40 text-green-100 border-green-700/50" },
+  { label: "Python", color: "bg-yellow-900/40 text-yellow-100 border-yellow-700/50" },
+  { label: "Tailwind CSS", color: "bg-teal-900/40 text-teal-100 border-teal-700/50" },
+  { label: "Claude API", color: "bg-purple-900/40 text-purple-100 border-purple-700/50" },
+  { label: "Xcode", color: "bg-blue-900/40 text-blue-100 border-blue-700/50" },
+  { label: "Git", color: "bg-red-900/40 text-red-100 border-red-700/50" },
+  { label: "Vercel", color: "bg-gray-700/40 text-gray-100 border-gray-600/50" },
 ];
 
 export default function About() {
   const [visibleTech, setVisibleTech] = useState<number[]>([]);
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      // Show all tech items immediately
+      setVisibleTech(techStack.map((_, i) => i));
+      return;
+    }
+
+    // Original staggered animation
     techStack.forEach((_, i) => {
       setTimeout(() => {
         setVisibleTech((prev) => [...prev, i]);
@@ -70,7 +79,7 @@ export default function About() {
 
             <div className="grid md:grid-cols-3 gap-6 mt-8 mb-10">
               <div className="bg-blue-50 dark:bg-blue-900/30 p-6 rounded-lg border border-blue-200 dark:border-blue-800">
-                <div className="text-2xl mb-2">🏗️</div>
+                <div className="text-2xl mb-2" aria-hidden="true">🏗️</div>
                 <h3 className="font-semibold text-lg text-blue-900 dark:text-blue-100 mb-2">
                   Builder
                 </h3>
@@ -80,7 +89,7 @@ export default function About() {
               </div>
 
               <div className="bg-green-50 dark:bg-green-900/30 p-6 rounded-lg border border-green-200 dark:border-green-800">
-                <div className="text-2xl mb-2">🧪</div>
+                <div className="text-2xl mb-2" aria-hidden="true">🧪</div>
                 <h3 className="font-semibold text-lg text-green-900 dark:text-green-100 mb-2">
                   Experimenter
                 </h3>
@@ -90,7 +99,7 @@ export default function About() {
               </div>
 
               <div className="bg-purple-50 dark:bg-purple-900/30 p-6 rounded-lg border border-purple-200 dark:border-purple-800">
-                <div className="text-2xl mb-2">⚡</div>
+                <div className="text-2xl mb-2" aria-hidden="true">⚡</div>
                 <h3 className="font-semibold text-lg text-purple-900 dark:text-purple-100 mb-2">
                   Leader
                 </h3>

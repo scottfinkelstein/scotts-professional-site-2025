@@ -73,9 +73,9 @@ const projects = [
 ];
 
 const statusStyles: Record<string, string> = {
-  Live: "bg-green-500/20 text-green-300 border border-green-500/30",
-  "In Dev": "bg-yellow-500/20 text-yellow-300 border border-yellow-500/30",
-  Experiment: "bg-purple-500/20 text-purple-300 border border-purple-500/30",
+  Live: "bg-green-900/30 text-green-100 border border-green-700/50",
+  "In Dev": "bg-yellow-900/30 text-yellow-100 border border-yellow-700/50",
+  Experiment: "bg-purple-900/30 text-purple-100 border border-purple-700/50",
 };
 
 const statusDot: Record<string, string> = {
@@ -107,7 +107,7 @@ export default function FeaturedWork() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                     activeCategory === cat
                       ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25"
                       : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
@@ -126,19 +126,24 @@ export default function FeaturedWork() {
                 href={project.link}
                 target={project.newWindow ? "_blank" : "_self"}
                 rel={project.newWindow ? "noopener noreferrer" : undefined}
-                className="block bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_30px_rgba(59,130,246,0.35)] hover:-translate-y-1.5 transition-all duration-300 group"
+                className="block bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_30px_rgba(59,130,246,0.35)] hover:-translate-y-1.5 transition-all duration-300 group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded-xl"
+                aria-label={`View ${project.title} project${project.newWindow ? " (opens in new window)" : ""}`}
               >
                 {project.image ? (
                   <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-600 dark:to-gray-700">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} project screenshot`}
                       className="w-full h-full object-cover"
                     />
                   </div>
                 ) : (
                   <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                    <span className="text-5xl opacity-20 select-none">
+                    <span
+                      className="text-5xl opacity-20 select-none"
+                      aria-label={`${project.category} project category icon`}
+                      role="img"
+                    >
                       {project.category === "iOS" ? "📱" : project.category === "Web" ? "🌐" : "🧪"}
                     </span>
                   </div>
@@ -170,6 +175,7 @@ export default function FeaturedWork() {
                           className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0"
                           fill="currentColor"
                           viewBox="0 0 20 20"
+                          aria-hidden="true"
                         >
                           <path
                             fillRule="evenodd"
