@@ -30,10 +30,16 @@ export default function Navigation() {
               About
             </button>
             <button
+              onClick={() => scrollToSection("featured-work")}
+              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              App Lab
+            </button>
+            <button
               onClick={() => scrollToSection("work")}
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
-              Work
+              Experience
             </button>
             <button
               onClick={() => scrollToSection("contact")}
@@ -79,10 +85,16 @@ export default function Navigation() {
               About
             </button>
             <button
+              onClick={() => scrollToSection("featured-work")}
+              className="block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded"
+            >
+              App Lab
+            </button>
+            <button
               onClick={() => scrollToSection("work")}
               className="block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded"
             >
-              Work
+              Experience
             </button>
             <button
               onClick={() => scrollToSection("contact")}
